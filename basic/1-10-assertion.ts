@@ -2,6 +2,7 @@
   /**
    * Type Assertions 💩
    * 타입을 100%장담 할 때에만 사용해야함
+   * ❌
    */
   function jsStrFunc(): any {
     return 2;
@@ -18,6 +19,7 @@
   }
   const numbers = findNumbers()!;
   numbers.push(2); // 😱
+  //❌numbers!.push(2) -> 배열이라고 10000% 장담한다는 의미
 
   const button = document.querySelector("class")!;
 }
