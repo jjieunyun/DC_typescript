@@ -9,6 +9,7 @@
     makeCoffee(shots: number): CoffeeCup;
   }
 
+  //💡 abstract 자체로는 object를 만들 수없다.
   abstract class CoffeeMachine implements CoffeeMaker {
     private static BEANS_GRAMM_PER_SHOT: number = 7; // class level
     private coffeeBeans: number = 0; // instance (object) level
@@ -40,6 +41,7 @@
       console.log('heating up... 🔥');
     }
 
+    //❗️추상적이기 때문에 구현사항을 적어줄 수없다. -> 구현은 자식에서
     protected abstract extract(shots: number): CoffeeCup;
 
     makeCoffee(shots: number): CoffeeCup {
