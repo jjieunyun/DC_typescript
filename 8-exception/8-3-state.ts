@@ -1,18 +1,18 @@
 {
   type NetworkErrorState = {
-    result: 'fail';
-    reason: 'offline' | 'down' | 'timeout';
+    result: "fail";
+    reason: "offline" | "down" | "timeout";
   };
 
   type SuccessState = {
-    result: 'success';
+    result: "success";
   };
 
   type ResultState = SuccessState | NetworkErrorState;
   class NetworkClient {
     tryConnect(): ResultState {
       return {
-        result: 'success',
+        result: "success",
       };
     }
   }
@@ -24,6 +24,8 @@
       this.client.tryConnect();
     }
   }
+
+  //💡catch로 에러를 받으면 타입이 사라진다.
 
   class App {
     constructor(private userService: UserService) {}
