@@ -55,6 +55,7 @@ console.log(getValue(obj, "age")); // 20
 console.log(getValue(obj2, "animal")); // 🐕
 
 //💡 object에 들어있는 key 중의 하나를 상속한다
+//❗️return 되는 값은 obj의 key중의 value를 리턴한다는 의미
 function getValue<T, K extends keyof T>(obj: T, key: K): T[K] {
   return obj[key];
 }
