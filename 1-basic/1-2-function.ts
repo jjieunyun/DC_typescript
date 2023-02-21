@@ -52,4 +52,44 @@
   console.log(addNumbers(1, 2));
   console.log(addNumbers(1, 2, 3, 4));
   console.log(addNumbers(1, 2, 3, 4, 5, 0));
+
+  /**
+   * 💡Function - Call signature
+   *
+   */
+  type Add = (a: number, b: number) => number;
+  const add3: Add = (a, b) => a + b;
+
+  /**
+   * 💡overloading : type에 따라 보내주는게 다르다
+   *
+   */
+  type Config = {
+    path: string;
+    state: object;
+  };
+
+  type Push = {
+    (path: string): void;
+    (config: Config): void;
+  };
+
+  const push: Push = (config) => {
+    if (typeof config === "string") {
+      console.log(config);
+    } else {
+      console.log(config.path, config.state);
+    }
+  };
+
+  type Add2 = {
+    (a: number, b: number): number;
+    (a: number, b: number, c?: number): number;
+  };
+
+  //마지막 인자는 optional
+  const add2: Add = (a, b, c?: number) => {
+    if (c) return a + b + c;
+    return a + b;
+  };
 }
