@@ -31,6 +31,17 @@
   let notSure: unknown = 0;
   notSure = "he";
   notSure = true;
+  /**
+   * 💡Unknown :  타입을 나중에 지정해 줄 수 있다.
+   *
+   */
+  let grade: unknown;
+  if (typeof grade === "number") {
+    let b = grade + 1;
+  }
+  if (typeof grade === "string") {
+    let b = grade.toUpperCase();
+  }
 
   // any 💩
   let anything: any = 0;
