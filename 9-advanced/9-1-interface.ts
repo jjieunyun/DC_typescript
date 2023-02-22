@@ -28,15 +28,15 @@
   };
 
   //❗️class ★ 둘다 클래스에서 구현가능
-  class Pos1 implements PositionType {
-    x: number;
-    y: number;
-  }
-
-  class Pos2 implements PositionInterface {
-    x: number;
-    y: number;
-  }
+  // class Pos1 implements PositionType {
+  //   x: number;
+  //   y: number;
+  // }
+  //
+  // class Pos2 implements PositionInterface {
+  //   x: number;
+  //   y: number;
+  // }
 
   //❗️Extends 확장가능
   interface ZPositionInterface extends PositionInterface {

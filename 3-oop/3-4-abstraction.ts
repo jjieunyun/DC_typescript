@@ -117,3 +117,28 @@
   const amateur = new AmateurUser(maker4);
   const pro = new ProBarista(maker4);
 }
+
+{
+  /**
+   * 🔥노마드 : 추상화 - 추상클래 : 다른클래스가 상속 받을 수 있는 클래스
+   * ❗️직접 인스턴스 만들 수는 없음 => 오직 다른 곳에서 상속만 가능함
+   * 상속을 받으면 부모의 클래스는 모두 구현해야함. but,'private'을 사용하면 상속 했음에도 불구하고 this 사용 불가능
+   */
+  abstract class User {
+    constructor(
+      private firstName: string,
+      protected lastName: string,
+      public nickName: string
+    ) {}
+    getFullName () {
+      return `${this.firstName} ${this.lastName}`
+    }
+  }
+
+  class Player extends User {
+
+  }
+
+  const jane = new Player('jieun', 'yun','jane')
+  jane.getFullName()
+}

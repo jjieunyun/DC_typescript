@@ -19,6 +19,7 @@
     }
     return arg;
   }
+
   const result = checkNotNullAnyBad(123);
 
   /*
@@ -31,22 +32,44 @@
     }
     return arg;
   }
+
   const number = checkNotNull(123);
   const boal: boolean = checkNotNull(true);
 
   /**
    * ❤️‍🔥노마드의 제네릭 예시
    */
-  //SuperPrint의 타입을 일일이 써주지 않아도 된다!
+  //❗️SuperPrint의 타입을 일일이 써주지 않아도 된다!
+  //❗️Generic 두개를 사용하는 것도 가능하다.
   type SuperPrint = {
-    <T>(arr: T[]): void;
+    <T, M>(a: T[], b?: M): void;
   };
+
+  //❗️함수처럼 제네릭 사용해도됨
+  function SuperPrint2<T>(a: T[]){
+    return a[0]
+  }
 
   const superPrint: SuperPrint = (arr) => {
     arr.forEach((i) => console.log(i));
   };
 
-  superPrint([1, 2, 3, 4]);
-  superPrint([1, 2, false, "string"]);
+  superPrint([1, 2, 3, 4], 'hello');
+  superPrint([1, 2, false, "string"], 2);
   superPrint([1, true, false, "me"]);
+
+  //💡제네릭 예시
+  type Player<E> = {
+    name: string,
+    extraInfo : E
+  }
+
+  type NicoExtra = {
+    favFood : string
+  }
+
+  type NicoPlayer = Player<NicoExtra>
+
+  //❗️useState
+  // const [id, setId] = useState<number>() -> ❗useState에 type을 정해줄 수도있다
 }
